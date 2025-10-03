@@ -1,5 +1,5 @@
 // sw.js — cache statico per PWA offline
-const CACHENAME = 'pushbox81-v1';
+const CACHENAME = 'pushbox81-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -18,7 +18,6 @@ self.addEventListener('activate', e=>{
 self.addEventListener('fetch', e=>{
   e.respondWith(
     caches.match(e.request).then(res => res || fetch(e.request).then(resp => {
-      // opzionale: cache on the fly per GET
       if(e.request.method==='GET'){
         const copy = resp.clone();
         caches.open(CACHENAME).then(c=>c.put(e.request, copy));
