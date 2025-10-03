@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#0a0f1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>PushBox 81 — PWA Rompicapo (Tributo 1981)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="crt">
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">🕹️ PushBox 81</div>
+      <div class="controls">
+        <button id="btnUndo" class="btn small" aria-label="Annulla mossa">↶ Undo</button>
+        <button id="btnReset" class="btn small" aria-label="Ricomincia livello">⟲ Reset</button>
+        <button id="btnPrev" class="btn small" aria-label="Livello precedente">«</button>
+        <button id="btnNext" class="btn small" aria-label="Livello successivo">»</button>
+        <span id="levelInfo" class="badge">Lv 1/10</span>
+        <span id="movesInfo" class="badge">0 mosse</span>
+        <button id="btnMute" class="btn small" aria-label="Audio on/off">🔊</button>
+        <button id="btnInstall" class="btn small hide">+ Install</button>
+      </div>
+    </header>
+
+    <main class="stage-wrap">
+      <canvas id="game" width="640" height="480" aria-label="Area di gioco"></canvas>
+      <div id="msg" class="msg hide"></div>
+    </main>
+
+    <nav class="pad">
+      <div class="pad-row">
+        <button class="key" data-dir="up" aria-label="Su">▲</button>
+      </div>
+      <div class="pad-row">
+        <button class="key" data-dir="left" aria-label="Sinistra">◀</button>
+        <button class="key" data-dir="down" aria-label="Giù">▼</button>
+        <button class="key" data-dir="right" aria-label="Destra">▶</button>
+      </div>
+    </nav>
+
+    <footer class="foot">
+      <p>© 2025 pezzaliAPP — MIT • PWA offline • Touch + Swipe • Audio 8‑bit • Livelli progressivi</p>
+    </footer>
+  </div>
+
+  <script defer src="app.js"></script>
+</body>
+</html>
